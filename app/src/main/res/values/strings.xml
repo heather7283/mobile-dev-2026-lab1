@@ -1,3 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Business Card</string>
+    <string name="person_name">Vasiliy Pupkin</string>
+    <string name="person_info">Third year software engineering student</string>
+    <string name="avatar_description">Vasily Pupkin\'s avatar</string>
+    <string name="email" translatable="false">vasiliy.pupkin@example.com</string>
+    <string name="phone_number" translatable="false">+7 (800) 555 35 35</string>
+    <string name="telegram_username" translatable="false">\@VasPup112</string>
+    <string name="contacts">Contacts:</string>
 </resources>
