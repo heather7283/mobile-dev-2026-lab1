@@ -60,10 +60,12 @@ fun BusinessCard() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
+            val padding = dimensionResource(R.dimen.edges_padding)
+
             if (isLandscape) {
-                LandscapeLayout(Modifier.safeContentPadding().padding(24.dp))
+                LandscapeLayout(Modifier.safeContentPadding().padding(padding))
             } else {
-                PortraitLayout(Modifier.safeContentPadding().padding(24.dp))
+                PortraitLayout(Modifier.safeContentPadding().padding(padding))
             }
         }
     }
@@ -91,10 +93,12 @@ fun BusinessCardPreview() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
+            val padding = dimensionResource(R.dimen.edges_padding)
+
             if (isLandscape) {
-                LandscapeLayout(Modifier.safeContentPadding().padding(24.dp))
+                LandscapeLayout(Modifier.safeContentPadding().padding(padding))
             } else {
-                PortraitLayout(Modifier.safeContentPadding().padding(24.dp))
+                PortraitLayout(Modifier.safeContentPadding().padding(padding))
             }
         }
     }
@@ -115,8 +119,8 @@ fun PortraitLayout(modifier: Modifier = Modifier) {
             Avatar(Modifier
                 .clip(MaterialTheme.shapes.large)
                 .background(MaterialTheme.colorScheme.primaryContainer)
-                .size(120.dp))
-            Spacer(Modifier.height(8.dp))
+                .size(dimensionResource(R.dimen.avatar_size)))
+            Spacer(Modifier.height(dimensionResource(R.dimen.spacing)))
             Name()
         }
         Contacts()
@@ -138,8 +142,8 @@ fun LandscapeLayout(modifier: Modifier = Modifier) {
             Avatar(Modifier
                 .clip(MaterialTheme.shapes.large)
                 .background(MaterialTheme.colorScheme.primaryContainer)
-                .size(120.dp))
-            Spacer(Modifier.width(8.dp))
+                .size(dimensionResource(R.dimen.avatar_size)))
+            Spacer(Modifier.width(dimensionResource(R.dimen.spacing)))
             Name()
         }
         Contacts()
@@ -163,14 +167,14 @@ fun Name(modifier: Modifier = Modifier) {
     ) {
         Text(
             text = stringResource(R.string.person_name),
-            fontSize = 32.sp,
+            fontSize = dimensionResource(R.dimen.big_font_size).value.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(8.dp))
         Text(
             text = stringResource(R.string.person_info),
-            fontSize = 16.sp,
+            fontSize = dimensionResource(R.dimen.normal_font_size).value.sp,
             textAlign = TextAlign.Center,
         )
     }
@@ -183,25 +187,28 @@ fun Contacts(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Bottom,
     ) {
+        val spacing = dimensionResource(R.dimen.spacing)
+        val fontSize = dimensionResource(R.dimen.normal_font_size).value.sp
+
         Text(
             text = stringResource(R.string.contacts),
-            fontSize = 16.sp,
+            fontSize = fontSize,
             fontWeight = FontWeight.Bold,
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(spacing))
         Text(
             text = stringResource(R.string.email),
-            fontSize = 16.sp,
+            fontSize = fontSize,
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(spacing))
         Text(
             text = stringResource(R.string.phone_number),
-            fontSize = 16.sp,
+            fontSize = fontSize,
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(spacing))
         Text(
             text = stringResource(R.string.telegram_username),
-            fontSize = 16.sp,
+            fontSize = fontSize,
         )
     }
 }
