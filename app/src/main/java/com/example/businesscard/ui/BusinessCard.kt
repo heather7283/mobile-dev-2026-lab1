@@ -73,6 +73,7 @@ fun BusinessCard() {
     showBackground = true,
     showSystemUi = true,
     device = Devices.TABLET,
+    locale = "ru",
 )
 @Preview(
     showBackground = true,
@@ -150,7 +151,7 @@ fun Avatar(modifier: Modifier = Modifier) {
     Image(
         modifier = modifier,
         painter = painterResource(R.drawable.avatar),
-        contentDescription = null,
+        contentDescription = stringResource(R.string.avatar_description),
     )
 }
 
@@ -161,14 +162,14 @@ fun Name(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Василий Пупкин",
+            text = stringResource(R.string.person_name),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "Студент 3 курса на направлении программной инженерии",
+            text = stringResource(R.string.person_info),
             fontSize = 16.sp,
             textAlign = TextAlign.Center,
         )
@@ -183,23 +184,23 @@ fun Contacts(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Bottom,
     ) {
         Text(
-            text = "Контакты:",
+            text = stringResource(R.string.contacts),
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "vasiliy.pupkin@example.com",
+            text = stringResource(R.string.email),
             fontSize = 16.sp,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "+7 (800) 555 35 35",
+            text = stringResource(R.string.phone_number),
             fontSize = 16.sp,
         )
         Spacer(Modifier.height(8.dp))
         Text(
-            text = "@VasPu123",
+            text = stringResource(R.string.telegram_username),
             fontSize = 16.sp,
         )
     }

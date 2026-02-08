@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Визитная карточка</string>
+    <string name="person_name">Василий Пупкин</string>
+    <string name="person_info">Студент третьего курса по специальности \"программная инженерия\"</string>
+    <string name="avatar_description">Аватарка Василия Пупкина</string>
+    <string name="contacts">Контакты</string>
+</resources>
