@@ -8,4 +8,7 @@
     <string name="phone_number" translatable="false">+7 (800) 555 35 35</string>
     <string name="telegram_username" translatable="false">\@VasPup112</string>
     <string name="contacts">Contacts:</string>
+    <string name="email_description">Email address</string>
+    <string name="phone_number_description">Phone number</string>
+    <string name="telegram_username_description">Telegram username</string>
 </resources>

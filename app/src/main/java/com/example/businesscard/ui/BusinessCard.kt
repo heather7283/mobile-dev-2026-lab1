@@ -21,7 +21,10 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Scaffold
@@ -32,6 +35,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
@@ -196,19 +200,45 @@ fun Contacts(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold,
         )
         Spacer(Modifier.height(spacing))
-        Text(
+        Contact(
+            icon = Icons.Default.Email,
+            description = stringResource(R.string.email_description),
             text = stringResource(R.string.email),
-            fontSize = fontSize,
         )
         Spacer(Modifier.height(spacing))
-        Text(
+        Contact(
+            icon = Icons.Default.Phone,
             text = stringResource(R.string.phone_number),
-            fontSize = fontSize,
+            description = stringResource(R.string.phone_number_description),
         )
         Spacer(Modifier.height(spacing))
-        Text(
+        Contact(
+            icon = Icons.Default.AccountCircle,
             text = stringResource(R.string.telegram_username),
-            fontSize = fontSize,
+            description = stringResource(R.string.telegram_username_description),
+        )
+    }
+}
+
+@Composable
+fun Contact(
+    icon: ImageVector,
+    description: String,
+    text: String,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.Start,
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = description,
+        )
+        Spacer(Modifier.width(dimensionResource(R.dimen.spacing)))
+        Text(
+            text = text,
+            fontSize = dimensionResource(R.dimen.normal_font_size).value.sp,
         )
     }
 }

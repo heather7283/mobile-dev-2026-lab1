@@ -5,4 +5,7 @@
     <string name="person_info">Студент третьего курса по специальности \"программная инженерия\"</string>
     <string name="avatar_description">Аватарка Василия Пупкина</string>
     <string name="contacts">Контакты</string>
+    <string name="email_description">Адрес электронной почты</string>
+    <string name="phone_number_description">Номер телефона</string>
+    <string name="telegram_username_description">Имя пользователя в Телеграм</string>
 </resources>
