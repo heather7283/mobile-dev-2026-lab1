@@ -175,7 +175,7 @@ fun Name(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
         )
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.width(dimensionResource(R.dimen.spacing)))
         Text(
             text = stringResource(R.string.person_info),
             fontSize = dimensionResource(R.dimen.normal_font_size).value.sp,
