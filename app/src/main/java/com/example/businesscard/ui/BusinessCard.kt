@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFrom
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
@@ -60,9 +61,9 @@ fun BusinessCard() {
             color = MaterialTheme.colorScheme.background
         ) {
             if (isLandscape) {
-                LandscapeLayout()
+                LandscapeLayout(Modifier.safeContentPadding().padding(24.dp))
             } else {
-                PortraitLayout()
+                PortraitLayout(Modifier.safeContentPadding().padding(24.dp))
             }
         }
     }
@@ -90,18 +91,18 @@ fun BusinessCardPreview() {
             color = MaterialTheme.colorScheme.background
         ) {
             if (isLandscape) {
-                LandscapeLayout()
+                LandscapeLayout(Modifier.safeContentPadding().padding(24.dp))
             } else {
-                PortraitLayout()
+                PortraitLayout(Modifier.safeContentPadding().padding(24.dp))
             }
         }
     }
 }
 
 @Composable
-fun PortraitLayout() {
+fun PortraitLayout(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.padding(24.dp),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
@@ -122,9 +123,9 @@ fun PortraitLayout() {
 }
 
 @Composable
-fun LandscapeLayout() {
+fun LandscapeLayout(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.padding(24.dp),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
